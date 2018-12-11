@@ -3,28 +3,31 @@ from flask import Flask, redirect, render_template, request
 from game import *
 
 app = Flask(__name__)
-question = get_question()
 answers = []
 
-
-def add_answers(username, answer):
-    """Add answer to the `answers` list"""
-    answers_dict = {"from": username, "answer": answer}
-    answers.append(answers_dict)
+def write_to_file(filename, data):
+    """Handle the process of writing data to a file"""
+    with open(filename, "a") as file:
+        file.writelines(data)
+        
+def add_answer(username, answer):
+    """Add answers to the `answers` text file"""
+    write_to_file("data/answers.txt", "{0}".format(answer))
 
 @app.route('/', methods=["GET", "POST"])
 def index():
     """Main page with instructions"""
     if request.method == "POST":
-        with open("data/users.txt", "a") as user_list:
-            user_list.writelines(request.form["username"] + "\n")
+        write_to_file("data/users.txt", request.form["username"] + "\n")
         return redirect(request.form["username"])
     return render_template("index.html")
 
 
-@app.route('/<username>')
+@app.route('/<username>', methods=["GET", "POST"])
 def user(username):
-    get_question()
+    if request.method == "POST":
+        add_answer(username, request.form["answer"] + "\n")
+    question = get_question()
     return render_template("game.html", question=question)
 
 
