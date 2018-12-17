@@ -5,12 +5,6 @@ from game import *
 
 app = Flask(__name__)
 
-def write_to_file(filename):
-    """Handle the process of writing data to a file"""
-    with open(filename, "w") as file:
-        file.write(json.dumps(players, indent=4))
-        #file.writelines(data)
-
 @app.route('/', methods=["GET", "POST"])
 def index():
     """Main page with instructions"""
@@ -23,6 +17,7 @@ def index():
 @app.route('/<username>', methods=["GET", "POST"])
 def user(username):
     if request.method == "POST":
+        check_answer(username, request.form["answer"])
         question = get_question(username)
     else:
         question = get_question(username)
