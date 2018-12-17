@@ -28,3 +28,6 @@ def check_answer(username, got_answer):
     if answer == got_answer:
         players[username]['which_quest'] += 1
         write_to_file("data/users.json")
+        return True
+    else:
+        return False

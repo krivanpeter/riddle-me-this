@@ -17,8 +17,12 @@ def index():
 @app.route('/<username>', methods=["GET", "POST"])
 def user(username):
     if request.method == "POST":
-        check_answer(username, request.form["answer"])
-        question = get_question(username)
+        answer = request.form["answer"]
+        if check_answer(username, answer):
+            question = get_question(username)
+        else:
+            question = get_question(username)
+            return render_template("game.html",question = question, answer=answer)
     else:
         question = get_question(username)
     return render_template("game.html", question = question)
