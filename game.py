@@ -11,4 +11,5 @@ def get_question(username):
     with open("data/riddles.json") as riddle_json:
         riddles = json.load(riddle_json)
         question = riddles[str(which_quest)]['question']
+    players[username]['which_quest'] += 1
     return question

@@ -20,12 +20,13 @@ def index():
         return redirect(request.form["username"])
     return render_template("index.html")
 
-
 @app.route('/<username>', methods=["GET", "POST"])
 def user(username):
-    #if request.method == "POST":
+    if request.method == "POST":
         question = get_question(username)
-        return render_template("game.html", question = question)
+    else:
+        question = get_question(username)
+    return render_template("game.html", question = question)
 
 
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)
