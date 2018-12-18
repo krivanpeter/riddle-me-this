@@ -9,8 +9,11 @@ app = Flask(__name__)
 def index():
     """Main page with instructions"""
     if request.method == "POST":
-        new_player(request.form["username"])
-        write_to_file("data/users.json")
+        if (new_player(request.form["username"])) == True:
+            write_to_file("data/users.json")
+        else:
+            exist = "Username is already in use. Please select another one!"
+            return render_template("index.html", exist = exist)
         return redirect(request.form["username"])
     return render_template("index.html")
 

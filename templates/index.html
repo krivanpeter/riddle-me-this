@@ -3,7 +3,10 @@
     <h2>Choose a username and start the game</h2>
     <form method="POST">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" required">
         <button>Start</button>
     </form>
+    {% if exist %}
+    <h3>{{ exist }}</h3>
+    {% endif %}
 {% endblock %}

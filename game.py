@@ -5,7 +5,12 @@ import json
 players = {}
 
 def new_player(username):
-    players[username] = dict(attempt = 0, which_quest = 1)
+    if username in players:
+        return False
+    else:
+        players[username] = dict(attempt = 0, which_quest = 1)
+        return True
+    
 
 def write_to_file(filename):
     with open(filename, "w") as file:
