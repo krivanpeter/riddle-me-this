@@ -8,7 +8,7 @@ def new_player(username):
     if username in players:
         return False
     else:
-        players[username] = dict(attempt = 0, which_quest = 1)
+        players[username] = dict(attempt = 0, which_quest = 1, points = 0)
         return True
     
 
@@ -26,7 +26,7 @@ def get_question(username):
     with open("data/riddles.json") as riddle_json:
         riddles = json.load(riddle_json)
     if players[username]['which_quest'] > len(riddles):
-        question = "No more riddle"
+        question = False
     else:
         question = open_riddles(username, "question")
     return question
@@ -41,3 +41,11 @@ def check_answer(username, got_answer):
     else:
         players[username]['attempt'] += 1
         return False
+
+def get_points(username):
+    riddles = (players[username]['which_quest']) - 1
+    attempts = players[username]['attempt']
+    points = str(riddles) + " / " + str(attempts)
+    players[username]['points'] = points
+    write_to_file("data/users.json")
+    return points

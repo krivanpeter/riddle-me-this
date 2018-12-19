@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% if question != "No more riddle" %}
+    {% if question != False %}
     <h2>{{ question }}</h2>
     <form method="POST">
         <label for="answer">Answer:</label>
@@ -9,6 +9,7 @@
     </form>
     {% else %}
     <h2>No more riddle</h2>
+    <p>Your score: {{ points }}</p>
     {% endif %}
     {% if answer %}
     <h2>Wrong answer: {{ answer }}</h2>
