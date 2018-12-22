@@ -49,3 +49,12 @@ def get_points(username):
     players[username]['points'] = points
     write_to_file("data/users.json")
     return points
+    
+def create_leaderboard():
+    with open("data/users.json") as users_json:
+        users = json.load(users_json)
+    list_back = []
+    for name, point in users.items():
+        list_back.append(name)
+        list_back.append(point["points"])
+    return list_back

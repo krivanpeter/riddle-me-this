@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, url_for, request
 from game import *
 
 app = Flask(__name__)
@@ -32,5 +32,9 @@ def user(username):
         question = get_question(username)
         return render_template("game.html", question = question)
 
-
+@app.route('/leaderboard', methods=["GET", "POST"])
+def leaderboard():
+    users = create_leaderboard()
+    return render_template("leaderboard.html", users = users)
+    
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

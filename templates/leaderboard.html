@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<table style="width:35%">
+    <tr>
+        <th>Player</th>
+        <th>Points</th>
+        <th>Rank</th>
+    </tr>
+    {% for user in users %}
+        {% if loop.index %2 != 0 %}
+            <tr>
+                <td>{{ user }}</td>
+        {% else %}
+            <td>{{ user }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}
