@@ -36,5 +36,6 @@ def user(username):
 def leaderboard():
     users = create_leaderboard()
     return render_template("leaderboard.html", users = users)
-    
+ 
+
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

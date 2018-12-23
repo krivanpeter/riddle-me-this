@@ -5,12 +5,12 @@
         "which_quest": 6
     }, 
     "Janos": {
-        "points": "6 / 5", 
-        "attempt": 5, 
+        "points": "5 / 10", 
+        "attempt": 10, 
         "which_quest": 6
-    },
-    "Gabor": {
-        "points": "7 / 5", 
+    }, 
+    "John": {
+        "points": "5 / 5", 
         "attempt": 5, 
         "which_quest": 6
     }

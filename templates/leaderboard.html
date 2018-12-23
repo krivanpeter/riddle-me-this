@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<table style="width:35%">
+<table style="width:50%">
     <tr>
         <th>Player</th>
         <th>Points</th>
-        <th>Rank</th>
     </tr>
     {% for user in users %}
         {% if loop.index %2 != 0 %}
