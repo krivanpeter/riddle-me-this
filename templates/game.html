@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
     {% if question != False %}
-    <h2>{{ question }}</h2>
+    <h3 class="black-text">{{ question }}</h3>
     <form method="POST">
-        <label for="answer">Answer:</label>
+        <label class="black-text" for="answer">Answer:</label>
         <input type="text" id="answer" name="answer" required>
         <button>Submit</button>
     </form>
     {% else %}
-    <h2>No more riddle</h2>
-    <p>Your score: {{ points }}</p>
+    <h3 class="black-text">No more riddle</h3>
+    <p class="black-text">Your score: {{ points }}</p>
     {% endif %}
     {% if answer %}
-    <h2>Wrong answer: {{ answer }}</h2>
+    <h3 class="black-text">Wrong answer: {{ answer }}</h3>
     {% endif %}
 {% endblock %}

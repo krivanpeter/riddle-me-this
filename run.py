@@ -34,8 +34,12 @@ def user(username):
 
 @app.route('/leaderboard', methods=["GET", "POST"])
 def leaderboard():
-    users = create_leaderboard()
-    return render_template("leaderboard.html", users = users)
+    if create_leaderboard() != False:
+        users = create_leaderboard()
+        return render_template("leaderboard.html", users = users)
+    else:
+        return render_template("leaderboard.html")
+    
  
 
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

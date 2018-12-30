@@ -1,17 +1,26 @@
 {% extends 'base.html' %} {% block content %}
-<table style="width:50%">
-    <tr>
-        <th>Player</th>
-        <th>Points</th>
-    </tr>
-    {% for user in users %}
-        {% if loop.index %2 != 0 %}
-            <tr>
-                <td>{{ user }}</td>
-        {% else %}
-            <td>{{ user }}</td>
-            </tr>
-        {% endif %}
-    {% endfor %}
-</table>
+<div class="container center ">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% if user %}
+            <table>
+                <tr>
+                    <th>Player</th>
+                    <th>Points</th>
+                </tr>
+                {% for user in users %} {% if loop.index %2 != 0 %}
+                <tr>
+                    <td>{{ user }}</td>
+                    {% else %}
+                    <td>{{ user }}</td>
+                </tr>
+                {% endif %} {% endfor %}
+            </table>
+            {% else %}
+            <h3 class="black-text">Nobody has played with this amazing game.</h3>
+            <p class="black-text">You can be the first one!</p>
+            <a href="{{ url_for('index') }}"><button>Play Now</button></a> {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
