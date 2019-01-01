@@ -1,28 +1,38 @@
 .black-text {
-    color:black;
+    color: black;
 }
 
 .center {
     text-align: center
 }
 
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 100%;
+}
+
+#sub-heading {
+    margin: 10px 0px 30px;
+}
+
 table {
-  width: 100%;
-  height: 100%;
-  border: 3px;
-  color: black;
+    width: 100%;
+    height: 100%;
+    border: 3px;
+    color: black;
+    border: 1px solid red;
 }
 
 th {
-    background-color: rgba(255, 0, 0, 0.85);
+    color: rgb(240, 240, 240);
+    background-color: rgba(105, 105, 105, 0.85);
     border: 1px solid black;
 }
 
 td {
-    background-color: rgba(255, 255, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid black;
-}
-
-table {
-  border: 1px solid red;
 }
