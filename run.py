@@ -34,11 +34,11 @@ def user(username):
 
 @app.route('/leaderboard', methods=["GET", "POST"])
 def leaderboard():
-    if create_leaderboard() != False:
+    if (create_leaderboard()) == False:
+        return render_template("leaderboard.html")
+    else:
         users = create_leaderboard()
         return render_template("leaderboard.html", users = users)
-    else:
-        return render_template("leaderboard.html")
     
  
 

@@ -1,0 +1,37 @@
+{
+    "Jani": {
+        "points": "5 / 6", 
+        "attempt": 6, 
+        "which_quest": 6
+    }, 
+    "Peti": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }, 
+    "Adi": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }, 
+    "Karcsi": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }, 
+    "Viktor": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }, 
+    "Zoli": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }, 
+    "Márk": {
+        "points": "5 / 5", 
+        "attempt": 5, 
+        "which_quest": 6
+    }
+}
