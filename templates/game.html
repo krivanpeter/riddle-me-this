@@ -8,10 +8,10 @@
         <button>Submit</button>
     </form>
     {% else %}
-    <h3 class="black-text">No more riddle</h3>
-    <p class="black-text">Your score: {{ points }}</p>
+    <h4 class="black-text">Your score: {{ points }}</h4>
+    <a href="{{ url_for('leaderboard') }}"><button>Leaderboard</button></a>
     {% endif %}
     {% if answer %}
-    <h3 class="black-text">Wrong answer: {{ answer }}</h3>
+    <h4 class="black-text">Wrong answer: {{ answer }}</h4>
     {% endif %}
 {% endblock %}

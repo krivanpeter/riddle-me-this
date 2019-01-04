@@ -15,7 +15,11 @@
 }
 
 #sub-heading {
-    margin: 10px 0px 30px;
+    margin: 10px 0px 50px;
+}
+
+button{
+    margin: 10px 0px;
 }
 
 table {

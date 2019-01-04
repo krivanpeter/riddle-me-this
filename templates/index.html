@@ -2,7 +2,7 @@
 <div class="container center">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto black-text">
-      <h2>Choose a username and start the game</h2>
+      <h3>Choose a username and start the game</h3>
       <form method="POST">
         <label class="black-text" for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -12,5 +12,5 @@
   </div>
 </div>
 {% if exist %}
-<h3>Username already exists. Please choose another one!</h3>
+<h4 class="black-text">Username already exists. Please choose another one!</h4>
 {% endif %} {% endblock %}
