@@ -42,7 +42,7 @@ def check_answer(username, got_answer):
         players[username]['attempt'] += 1
         return False
 
-def get_points(username):
+def calc_points(username):
     riddles = (players[username]['which_quest']) - 1
     attempts = players[username]['attempt']
     points = str(riddles) + " / " + str(attempts)

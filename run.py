@@ -9,30 +9,35 @@ app = Flask(__name__)
 def index():
     """Main page with instructions"""
     if request.method == "POST":
-        if (new_player(request.form["username"].title())) == True:
+        username = request.form["username"].title()
+        if (new_player(username)) == True:
             write_to_file("data/users.json")
         else:
             exist = True
             return render_template("index.html", exist = exist)
-        return redirect(request.form["username"].title())
+        return redirect(url_for("user", username = username, which_quest = players[username]['which_quest']))
     return render_template("index.html")
 
-@app.route('/<username>', methods=["GET", "POST"])
-def user(username):
+@app.route('/<username>/<which_quest>', methods=["GET", "POST"])
+def user(username, which_quest):
+    points = calc_points(username)
     if request.method == "POST":
         answer = request.form["answer"].lower()
         if check_answer(username, answer):
             question = get_question(username)
-            points = get_points(username)
-            return render_template("game.html", question = question, points = points)
+            if which_quest == 11:
+                return render_template("game.html", question = question, points = points)
+            else:
+                return redirect(url_for("user", username = username, which_quest = players[username]['which_quest']))
         else:
             question = get_question(username)
             return render_template("game.html", question = question, answer = answer)
     else:
         question = get_question(username)
-        return render_template("game.html", question = question)
+        return render_template("game.html", question = question, points = points)
+        
 
-@app.route('/leaderboard', methods=["GET", "POST"])
+@app.route('/leaderboard')
 def leaderboard():
     if (create_leaderboard()) == False:
         return render_template("leaderboard.html")

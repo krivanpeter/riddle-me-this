@@ -5,9 +5,9 @@
     <form method="POST">
         <label class="black-text" for="answer">Answer:</label>
         <input type="text" id="answer" name="answer" required>
-        <button>Submit</button>
+        <input type="submit" name="submit_button" value="Submit">
     </form>
-    {% else %}
+    {% elif points %}
     <h4 class="black-text">Your score: {{ points }}</h4>
     <a href="{{ url_for('leaderboard') }}"><button>Leaderboard</button></a>
     {% endif %}
