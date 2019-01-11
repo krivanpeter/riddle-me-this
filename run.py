@@ -30,12 +30,24 @@ def user(username, which_quest):
             else:
                 return redirect(url_for("user", username = username, which_quest = players[username]['which_quest']))
         else:
-            question = get_question(username)
-            return render_template("game.html", question = question, answer = answer)
+            return redirect(url_for("bad_answer", username = username, which_quest = players[username]['which_quest'], answer = answer))
     else:
         question = get_question(username)
         return render_template("game.html", question = question, points = points)
-        
+
+@app.route('/<username>/<which_quest>/<answer>', methods=["GET", "POST"])
+def bad_answer(username, which_quest, answer):
+    points = calc_points(username)
+    if request.method == "POST":
+        answer = request.form["answer"].lower()   
+        if check_answer(username, answer):
+            return redirect(url_for("user", username = username, which_quest = players[username]['which_quest']))
+        else:
+            question = get_question(username)
+            return redirect(url_for("bad_answer", username = username, which_quest = players[username]['which_quest'], answer = answer))
+    else:
+        question = get_question(username)
+        return render_template("game.html", question = question, answer = answer)
 
 @app.route('/leaderboard')
 def leaderboard():
