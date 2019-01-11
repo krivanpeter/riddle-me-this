@@ -2,6 +2,7 @@
 <div class="container center ">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <!--If 'Leaderboard' is called with 'users' arguments, then it appears in a table-->
             {% if users %}
             <table>
                 <tr>
@@ -16,6 +17,7 @@
                 </tr>
                 {% endif %} {% endfor %}
             </table>
+            <!--If 'Leaderboard' is called without 'users' arguments, everything below this, appear-->
             {% else %}
             <h3 class="black-text">Nobody has played with this amazing game.</h3>
             <p class="black-text">You can be the first one!</p>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<!--If the template is called with 'question' then it appears on the page-->
     {% if question != False %}
     <h3 class="black-text">{{ question }}</h3>
     <form method="POST">
@@ -7,10 +8,12 @@
         <input type="text" id="answer" name="answer" required>
         <input type="submit" name="submit_button" value="Submit">
     </form>
+<!--If the template is called without 'question' then 'points' and a button to 'Leaderboard' appear-->
     {% elif points %}
     <h4 class="black-text">Your score: {{ points }}</h4>
     <a href="{{ url_for('leaderboard') }}"><button>Leaderboard</button></a>
     {% endif %}
+<!--If the template is called with 'answer' then it appears as a "Wrong answer"-->
     {% if answer %}
     <h4 class="black-text">Wrong answer: {{ answer }}</h4>
     {% endif %}
