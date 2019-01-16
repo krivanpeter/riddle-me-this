@@ -66,5 +66,5 @@ def create_leaderboard():
             list_back.append(name)
             list_back.append(point["points"])
         return list_back
-    except ValueError, e:
+    except:
         return False
