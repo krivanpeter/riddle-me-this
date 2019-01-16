@@ -41,7 +41,7 @@ Existing Features
 
 This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub](https://github.com/) and [Heroku](https://www.heroku.com/).
 
-###Getting the code up and running
+### Getting the code up and running
 
 1. Firstly you will need to clone this repository by running the git clone <project's Github URL> command
 2. After you've that you'll need to make sure that you have npm installed
@@ -58,4 +58,4 @@ This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub]
 
 ### Acknowledgements
 
-I received inspiration for this project from Code Institute, from [David Shiffman](https://www.youtube.com/user/shiffman) on youtube and from [Wikipedia](https://en.wikipedia.org/wiki/Simon_(game)).
+I received inspiration for this project from [Code Institute](https://codeinstitute.net/).
