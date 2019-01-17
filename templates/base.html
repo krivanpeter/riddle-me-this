@@ -7,25 +7,21 @@
   <title>Riddle Me This</title>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-      <ul class="navbar-nav ml-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link " href="{{ url_for('index') }}">Home</a>
-        </li>
-      </ul>
-    </div>
-    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-      <a class="mx-auto" href="#">
+<body style="background: url({{ url_for('static', filename='img/background.jpg') }})center center fixed;background-size:cover;">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="{{ url_for('index') }}">Riddle Me This</a>
+    <a class="mx-auto" href="{{ url_for('index') }}">
         <img src="{{url_for('static', filename='img/logo.png')}}" />
         </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-      <ul class="navbar-nav mr-auto text-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+      <ul class="navbar-nav text-right">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('leaderboard') }}">Leaderboard</a>
         </li>
@@ -33,12 +29,19 @@
     </div>
   </nav>
 
+  <!-- Main Content -->
+  <section class="container h-100 vertical-center">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+      <div class="col-12">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-  <!-- Main Content -->
-  {% block content %} {% endblock %}
 
 </body>
 

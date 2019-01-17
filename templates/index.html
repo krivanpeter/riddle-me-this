@@ -1,17 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container center">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto black-text">
-      <h3>Choose a username and start the game</h3>
-      <form method="POST">
-        <label class="black-text" for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <button>Start</button>
-      </form>
-    </div>
-  </div>
-</div>
+<h3 class="general-sub">Are you smart enough?</h3>
+<h3 class="general-sub">Choose a username and start the game</h3>
+<form method="POST">
+  <label class="general-sub" for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+  <button>Start</button>
+</form>
 <!--If username exist, then the application asks for another one-->
 {% if exist %}
-<h4 class="black-text">Username already exists. Please choose another one!</h4>
+<h4 class="general-sub">Username already exists. Please choose another one!</h4>
 {% endif %} {% endblock %}

@@ -1,27 +1,4 @@
-.black-text {
-    color: black;
-}
-
-.center {
-    text-align: center
-}
-
-#header {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    min-height: 100%;
-}
-
-#sub-heading {
-    margin: 10px 0px 50px;
-}
-
-button{
-    margin: 10px 0px;
-}
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 table {
     width: 100%;
     height: 100%;
@@ -41,28 +18,27 @@ td {
     border: 1px solid black;
 }
 
-/*------------------------------NAVBAR*/
-/*.menuitem {
-    height: 67px;
+.general-sub {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #000000;
 }
 
-.menuitem a {
-    text-decoration: none;
-    color: #000000;
-    height: 67px;
+form{
+    margin: 20px;
 }
 
-.menuitem a i {
-    padding: 10px 0px;
-    display: inline-block;
-    color: #000000;
+html,
+body {
+    height: 90%;
+}
+
+.nav-link,
+.navbar-brand{
     font-size: 20px;
+    font-weight: 400;
+    color:black;
+    text-decoration: none;
 }
-
-.menuitem a span {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 2px;
-}*/

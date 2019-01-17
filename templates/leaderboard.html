@@ -1,28 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container center ">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <!--If 'Leaderboard' is called with 'users' arguments, then it appears in a table-->
-            {% if users %}
-            <table>
-                <tr>
-                    <th>Player</th>
-                    <th>Points</th>
-                </tr>
-                {% for user in users %} {% if loop.index %2 != 0 %}
-                <tr>
-                    <td>{{ user }}</td>
-                    {% else %}
-                    <td>{{ user }}</td>
-                </tr>
-                {% endif %} {% endfor %}
-            </table>
-            <!--If 'Leaderboard' is called without 'users' arguments, everything below this, appear-->
-            {% else %}
-            <h3 class="black-text">Nobody has played with this amazing game.</h3>
-            <p class="black-text">You can be the first one!</p>
-            <a href="{{ url_for('index') }}"><button>Play Now</button></a> {% endif %}
-        </div>
-    </div>
-</div>
-{% endblock %}
+<!--If 'Leaderboard' is called with 'users' arguments, then it appears in a table-->
+{% if users %}
+<table>
+    <tr>
+        <th>Player</th>
+        <th>Points</th>
+    </tr>
+    {% for user in users %} {% if loop.index %2 != 0 %}
+    <tr>
+        <td>{{ user }}</td>
+        {% else %}
+        <td>{{ user }}</td>
+    </tr>
+    {% endif %} {% endfor %}
+</table>
+<!--If 'Leaderboard' is called without 'users' arguments, everything below this, appear-->
+{% else %}
+<h3 class="black-text">Nobody has played with this amazing game.</h3>
+<p class="black-text">You can be the first one!</p>
+<a href="{{ url_for('index') }}"><button>Play Now</button></a> {% endif %} {% endblock %}
