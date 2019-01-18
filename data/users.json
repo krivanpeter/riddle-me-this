@@ -1,10 +1,5 @@
 {
     "Peter": {
-        "points": "10 / 10", 
-        "attempt": 10, 
-        "which_quest": 11
-    }, 
-    "Jani": {
         "points": "10 / 12", 
         "attempt": 12, 
         "which_quest": 11

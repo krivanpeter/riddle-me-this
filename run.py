@@ -3,7 +3,7 @@ import json
 from flask import Flask, redirect, render_template, url_for, request
 from game import *
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route('/', methods=["GET", "POST"])
 def index():
