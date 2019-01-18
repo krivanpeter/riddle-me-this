@@ -9,12 +9,12 @@ table {
 
 th {
     color: rgb(240, 240, 240);
-    background-color: rgba(105, 105, 105, 0.85);
+    background-color: rgba(105, 105, 105);
     border: 1px solid black;
 }
 
 td {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255);
     border: 1px solid black;
 }
 
@@ -26,7 +26,7 @@ td {
     color: #000000;
 }
 
-form{
+form {
     margin: 20px;
 }
 
@@ -36,9 +36,23 @@ body {
 }
 
 .nav-link,
-.navbar-brand{
+.navbar-brand {
     font-size: 20px;
     font-weight: 400;
-    color:black;
+    color: black;
     text-decoration: none;
+}
+
+.navbar,
+.navbar-light{
+    color: white;
+    background-color: rgba(105, 105, 105);
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: black;
 }
