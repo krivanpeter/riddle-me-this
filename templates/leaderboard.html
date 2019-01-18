@@ -16,6 +16,6 @@
 </table>
 <!--If 'Leaderboard' is called without 'users' arguments, everything below this, appear-->
 {% else %}
-<h3>Nobody has played with this amazing game.</h3>
-<p>You can be the first one!</p>
+<h3 class="general-sub">Nobody has played with this amazing game.</h3>
+<p class="general-sub">You can be the first one!</p>
 <a href="{{ url_for('index') }}"><button>Play Now</button></a> {% endif %} {% endblock %}
