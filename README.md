@@ -54,7 +54,6 @@ This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub]
 ### Media
 
 - The riddles were used in this site were obtained from [Riddles & Answers](https://riddles.fyi/)
-- The template was used in this site was obtained from [Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/)
 
 ### Acknowledgements
 

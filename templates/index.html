@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-<h3 class="general-sub">Are you smart enough?</h3>
-<h3 class="general-sub">Choose a username and start the game</h3>
+<h1 class="general-sub">Are you smart enough?</h1>
+<h2 class="general-sub">Choose a username and start the game</h2>
 <form method="POST">
   <label class="general-sub" for="username">Username:</label>
   <input type="text" id="username" name="username" required>
@@ -8,5 +8,5 @@
 </form>
 <!--If username exist, then the application asks for another one-->
 {% if exist %}
-<h4 class="general-sub">Username already exists. Please choose another one!</h4>
+<h2 class="general-sub">Username already exists. Please choose another one!</h2>
 {% endif %} {% endblock %}

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Exo');
-html{
+html {
     height: 100%;
 }
+
 .background {
     background-image: url('../img/background.jpg');
     background-repeat: no-repeat;
@@ -31,8 +32,16 @@ form {
     margin: 20px;
 }
 
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
 .general-sub {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
     font-family: "Roboto", sans-serif;
     color: white;
@@ -66,13 +75,25 @@ form {
 .navbar-light .navbar-nav .nav-link {
     color: white;
 }
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: rgba(255,255,255, 0.9);
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media(min-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
 }
