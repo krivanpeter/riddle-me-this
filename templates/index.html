@@ -3,9 +3,10 @@
 <h2 class="general-sub">Choose a username and start the game</h2>
 <form method="POST">
   <label class="general-sub" for="username">Username:</label>
-  <input type="text" id="username" name="username" required>
-  <button>Start</button>
+  <input class="input_line" type="text" id="username" name="username" required><br>
+  <button class="btn btn-light btn-sm" type="submit">Start</button>
 </form>
+
 <!--If username exist, then the application asks for another one-->
 {% if exist %}
 <h2 class="general-sub">Username already exists. Please choose another one!</h2>
