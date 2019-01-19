@@ -37,6 +37,27 @@ Existing Features
     Git/GitHub
         Use Git for version control.
 
+##Testing
+
+Automated tests was not written but all of the elements of the page has been tested manually on:
+* Mozilla Firefox
+* Internet Explorer
+* Google Chrome
+
+Scenerios:
+1. Username form:
+    1. Try to submit the empty form, an error message about the required field appears
+    2. Try to submit an existing username, an error message appears
+    3. Try to submit the form with valid input and you will be forwarded to the first riddle
+2. Answer form:
+    1. Try to submit the empty form, an error message about the required field appears
+    2. Try to submit a worng answer, you stay at the same riddle and text with wrong answer appears
+    3. Try to submit the form with good answer and you will be forwarded to the next riddle  
+    4. If there is no more riddle you will get your score and can go to ,,Leaderboard"
+3. Leaderboard:
+    1. If there was no player before, you see a text says ,,You can be the first"
+    2. If there was player before, you see a table shows them and their scores
+
 ## Deployment
 
 This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub](https://github.com/) and [Heroku](https://www.heroku.com/).
@@ -50,10 +71,13 @@ This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub]
 5. The project will now run on localhost
 
 ## Credits
+### Content
+
+- The riddles were used in this site were obtained from [Riddles & Answers](https://riddles.fyi/)
 
 ### Media
 
-- The riddles were used in this site were obtained from [Riddles & Answers](https://riddles.fyi/)
+- The question mark was obtained from [FreeStockPhotos](http://www.freestockphotos.biz)
 
 ### Acknowledgements
 
