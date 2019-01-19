@@ -1,16 +1,17 @@
 import os
 import json
-from flask import Flask, redirect, render_template, url_for, request
+from flask import Flask, redirect, render_template, url_for, request, session
 from game import *
 
 app = Flask(__name__, static_url_path='/static')
-
+app.secret_key = "justarandomstring321"
 
 @app.route('/', methods=["GET", "POST"])
 def index():
     """MAIN PAGE"""
     if request.method == "POST":
-        username = request.form["username"].title()
+        session["username"] = request.form["username"].title()
+        username = session["username"]
         # If name is not occupied then this function writes it to users.json
         if (new_player(username)) is True:
             write_to_file("data/users.json")
@@ -20,6 +21,10 @@ def index():
             exist = True
             return render_template("index.html", exist=exist)
         return redirect(url_for("game", username=username, which_quest=players[username]['which_quest']))
+        # If name is in session(cookie) then game can be continued
+        # by forwarding to riddle where user was
+    if "username" in session:
+            return redirect(url_for("game", username=session["username"], which_quest=players[session["username"]]['which_quest']))
     return render_template("index.html")
 
 
