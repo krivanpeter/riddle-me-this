@@ -2,7 +2,7 @@
 
 I'm a student at Code Institute and I've reached my third milestone project which was to create this webapplication.
 
-## What does it do??
+## What does it do?
 
 This website shows riddles and waits for answer from the user.
 It checks if the answers are right or not, saves the user and his points.
@@ -37,7 +37,7 @@ Existing Features
     Git/GitHub
         Use Git for version control.
 
-##Testing
+## Testing
 
 Automated tests was not written but all of the elements of the page has been tested manually on:
 * Mozilla Firefox
