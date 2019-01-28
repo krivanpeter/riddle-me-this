@@ -18,6 +18,7 @@ Existing Features
                 - allows users to see if the answer was not right, by having them see the wrong answers when it is submitted
     Points      - allows users to see how many points they earned by answering the last riddle
     Leaderboard - allows users to see the points of all the players, by go on 'Leaderboard' page
+    Log Out     - allows users to log out and start a new game with a new account
 
 ## Features Left to Implement
 
@@ -57,6 +58,9 @@ Scenerios:
 3. Leaderboard:
     1. If there was no player before, you see a text says ,,You can be the first"
     2. If there was player before, you see a table shows them and their scores
+4. Log Out:
+    1. If you want to log out you will be forwarded to the "logout" page
+    2. After logout your informations will be deleted from cookies(session) so you can start a new game
 
 ## Deployment
 
