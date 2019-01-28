@@ -6,6 +6,7 @@ from game import *
 app = Flask(__name__, static_url_path='/static')
 app.secret_key = "justarandomstring321"
 
+
 @app.route('/', methods=["GET", "POST"])
 def index():
     """MAIN PAGE"""
@@ -18,13 +19,14 @@ def index():
         # If name is occupied then this function renders
         # template with 'it already exists' message
         else:
+            session.pop("username")
             exist = True
             return render_template("index.html", exist=exist)
         return redirect(url_for("game", username=username, which_quest=players[username]['which_quest']))
         # If name is in session(cookie) then game can be continued
         # by forwarding to riddle where user was
     if "username" in session:
-            return redirect(url_for("game", username=session["username"], which_quest=players[session["username"]]['which_quest']))
+        return redirect(url_for("game", username=session["username"], which_quest=players[session["username"]]['which_quest']))
     return render_template("index.html")
 
 
@@ -40,14 +42,14 @@ def game(username, which_quest):
         if check_answer(username, answer):
             question = get_question(username)
             if which_quest == 11:
-                return render_template("game.html", question=question, points=points)
+                return render_template("game.html", username=username, question=question, points=points)
             else:
                 return redirect(url_for("game", username=username, which_quest=players[username]['which_quest']))
         else:
             return redirect(url_for("bad_answer", username=username, which_quest=players[username]['which_quest'], answer=answer))
     else:
         question = get_question(username)
-        return render_template("game.html", question=question, points=points)
+        return render_template("game.html", username=username, question=question, points=points)
 
 
 @app.route('/<username>/<which_quest>/<answer>', methods=["GET", "POST"])
@@ -64,7 +66,7 @@ def bad_answer(username, which_quest, answer):
             return redirect(url_for("bad_answer", username=username, which_quest=players[username]['which_quest'], answer=answer))
     else:
         question = get_question(username)
-        return render_template("game.html", question=question, answer=answer)
+        return render_template("game.html", username=username, question=question, answer=answer)
 
 
 @app.route('/leaderboard')
@@ -74,6 +76,18 @@ def leaderboard():
         return render_template("leaderboard.html")
     else:
         users = create_leaderboard()
-        return render_template("leaderboard.html", users=users)
+        if "username" in session:
+            return render_template("leaderboard.html", username=session["username"], users=users)
+        else:
+            return render_template("leaderboard.html", users=users)
+
+
+@app.route('/logout', methods=["GET", "POST"])
+def logout():
+    if request.method == "POST":
+        session.pop("username")
+        return redirect(url_for("index"))
+    else:
+        return render_template("logout.html")
 
 app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=False)

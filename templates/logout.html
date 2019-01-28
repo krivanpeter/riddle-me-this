@@ -1,0 +1,8 @@
+@app.context_processor{% extends 'base.html' %}
+{% block content %}
+<h1 class="general-sub">Are you sure you want to log out?</h1>
+<h2 class="general-sub">If you log out you will not be able to continue the game again and your account will be closed.</h2>
+<form method="POST">
+  <button class="btn btn-light btn-sm" type="submit">Log Out</button>
+</form>
+{% endblock %}

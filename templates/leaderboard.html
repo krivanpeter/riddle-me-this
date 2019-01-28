@@ -1,4 +1,12 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block signout %}
+{% if username %}
+<li class="nav-item">
+  <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+</li>
+{% endif %}
+{% endblock %}
+{% block content %}
 <h1 class="general-sub leaderboard">Leaderboard</h1>
 <!--If 'Leaderboard' is called with 'users' arguments, then it appears in a table-->
 {% if users %}
