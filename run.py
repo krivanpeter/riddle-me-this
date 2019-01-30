@@ -4,7 +4,7 @@ from flask import Flask, redirect, render_template, url_for, request, session
 from game import *
 
 app = Flask(__name__, static_url_path='/static')
-
+app.secret_key = os.getenv('SECRET_KEY')
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -89,4 +89,4 @@ def logout():
     else:
         return render_template("logout.html")
 
-app.run(host=os.getenv('IP'), port=int(os.getenv('PORT'), secret_key=os.getenv('SECRET_KEY')), debug=False)
+app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=False)
