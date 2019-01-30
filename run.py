@@ -90,4 +90,4 @@ def logout():
     else:
         return render_template("logout.html")
 
-app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=False)
+app.run(host=os.getenv('IP'), port=int(os.getenv('PORT')), debug=True)

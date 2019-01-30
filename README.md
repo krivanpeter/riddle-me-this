@@ -60,7 +60,7 @@ Scenerios:
     2. If there was player before, you see a table shows them and their scores
 4. Log Out:
     1. If you want to log out you will be forwarded to the "logout" page
-    2. After logout your informations will be deleted from cookies(session) so you can start a new game
+    2. After logout the username will be popped from session so you can start a new game
 
 ## Deployment
 

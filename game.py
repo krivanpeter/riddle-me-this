@@ -59,7 +59,7 @@ def check_answer(username, got_answer):
 def calc_points(username):
     riddles = (players[username]['which_quest']) - 1
     attempts = players[username]['attempt']
-    points = str(riddles) + " / " + str(attempts)
+    points = str(attempts) + " / " + str(riddles)
     players[username]['points'] = points
     write_to_file("data/users.json")
     return points
