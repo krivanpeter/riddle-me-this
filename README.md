@@ -70,9 +70,10 @@ This project was created on [C9.IO](https://c9.io/) and was deployed to [GitHub]
 
 1. Firstly you will need to clone this repository by running the git clone <project's Github URL> command
 2. After you've that you'll need to make sure that you have npm installed
-3. After those dependencies have been installed you'll need to make sure that you have http-server installed. You can install this by running the following: npm install -g http-server # this also may require sudo on Mac/Linux
-4. Once http-server is installed run http-server -c-1
-5. The project will now run on localhost
+3. After those dependencies have been installed you'll need to make sure that you have http-server installed.
+4. After that you will need to modify the ,,app.secret_key" to any string
+5. Once these are done run the server
+6. The project will now run on localhost
 
 ## Credits
 ### Content
