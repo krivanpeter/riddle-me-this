@@ -1,4 +1,4 @@
-# The Simon Game
+# Riddle Me This
 
 I'm a student at Code Institute and I've reached my third milestone project which was to create this webapplication.
 
